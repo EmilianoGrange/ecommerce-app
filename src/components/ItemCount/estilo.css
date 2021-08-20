@@ -1,0 +1,7 @@
+.contador {
+    border: 2px dotted;
+    border-radius: 1rem;
+    width: fit-content;
+    margin: auto;
+    padding: 1rem;
+}
