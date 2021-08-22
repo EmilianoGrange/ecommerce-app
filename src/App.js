@@ -6,8 +6,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <ItemListContainer greeting="Bienvenidos a la pañalera"/>
+      <NavBar />
+      <ItemListContainer greeting="Bienvenidos a la pañalera" />
     </div>
   );
 }

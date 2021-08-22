@@ -2,6 +2,18 @@
     border: 2px dotted;
     border-radius: 1rem;
     width: fit-content;
-    margin: auto;
+    margin: .5rem auto;
     padding: 1rem;
+}
+
+.contador button{
+    margin: .8rem auto;
+}
+
+.contador-inner{
+    display: flex;
+}
+
+.contador-inner p{
+    margin: 1rem;
 }
