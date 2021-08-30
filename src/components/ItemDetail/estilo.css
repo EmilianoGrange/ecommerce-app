@@ -1,0 +1,26 @@
+.detalle {
+    margin: 5rem auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: solid rgb(100, 100, 100);
+    width: 50vw;
+    /* background-color: #e7eff9;
+    background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%); */
+    background: #BE93C5;
+    background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);
+    background: linear-gradient(to right, #7BC6CC, #BE93C5);
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.detalle h2, .detalle h3{
+    display: inline;
+    margin: auto;
+}
+
+.detalle img {
+    display: inline;
+    margin: auto;
+    width: 250px;
+    height: 250px;
+}

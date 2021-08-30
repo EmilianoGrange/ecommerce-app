@@ -2,9 +2,10 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import CartWidget from "../CartWidget";
+import './estilo.css';
 
 const NavBar = () => (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" className="nav-bar">
       <Container fluid="xl">
         <Navbar.Brand href="#home">Pañalera</Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">

@@ -59,7 +59,6 @@ const ItemListContainer = ({greeting}) => {
                 }
             ]
           );
-          rej(console.log("No se encontraron productos"));
         }, 2000);
     });
 
