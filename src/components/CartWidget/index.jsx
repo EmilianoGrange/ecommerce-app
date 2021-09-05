@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faOpencart } from "@fortawesome/free-brands-svg-icons";
+import { faOpencart } from '@fortawesome/free-brands-svg-icons';
 import './estilo.css';
 
 const CartWidget = () => (

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import Button from "react-bootstrap/Button";
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 import './estilo.css';
 
 const ItemCount = ({stock, initial, onAdd}) => {

@@ -1,19 +1,21 @@
-import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import CartWidget from "../CartWidget";
+import { NavLink } from 'react-router-dom';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import CartWidget from '../CartWidget';
 import './estilo.css';
 
 const NavBar = () => (
     <Navbar bg="light" expand="lg" className="nav-bar">
       <Container fluid="xl">
-        <Navbar.Brand href="#home">Pañalera</Navbar.Brand>
+        <NavLink className="nav-link" to="/"><Navbar.Brand>Pañalera</Navbar.Brand></NavLink>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Categoria 1</Nav.Link>
-            <Nav.Link href="#link">Categoria 2</Nav.Link>
-            <Nav.Link href="#link">Categoria 3</Nav.Link>
+            <NavLink className="nav-link" to="/">Home</NavLink>
+            <NavLink className="nav-link" to="/category/1">Pampers</NavLink>
+            <NavLink className="nav-link" to="/category/2">Babysec</NavLink>
+            <NavLink className="nav-link" to="/category/3">Huggies</NavLink>
+            <NavLink className="nav-link" to="/category/4">Estrella</NavLink>
           </Nav>
         </Navbar.Collapse>
         <CartWidget/>
