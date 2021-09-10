@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 import ItemDetail from '../../components/ItemDetail';
 
-const URL = 'https://mocki.io/v1/d394ca31-3994-4ab8-b0e4-7f24286114e4';
+const URL = 'https://mocki.io/v1/a20df978-de80-4465-aaf8-096b42601b5a';
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState(null);

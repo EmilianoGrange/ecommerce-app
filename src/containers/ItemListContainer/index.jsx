@@ -5,6 +5,7 @@ import ItemList from '../../components/ItemList';
 
 const ItemListContainer = ({greeting}) => {
     const [productos, setProductos] = useState([]);
+    const [fetched, setFetched] = useState(false);
     const {id} = useParams();
 
     useEffect (() => {
@@ -64,7 +65,7 @@ const ItemListContainer = ({greeting}) => {
                         "categoria": 2,
                         "price": 1200,
                         "pictureUrl": "../productos/img/bsecUSXG.jpg",
-                        "stock": 32
+                        "stock": 0
                     }
                 ]
               );
@@ -79,7 +80,10 @@ const ItemListContainer = ({greeting}) => {
             else {
                 setProductos(data);
             }
+            setFetched(true);
         })
+
+        return(setFetched(false));
     }, [id]);
 
     const onAdd = (cantidad) => {
@@ -90,16 +94,14 @@ const ItemListContainer = ({greeting}) => {
         <>
             <h1>{greeting}</h1>
             <br/>
-            { productos.length ? <ItemList productos={productos} onAdd={onAdd}/> :
-            (
-                <>
-                    <Spinner animation="border" />
-                    <br/>
-                    <h2>Cargando...</h2>
-                </>
-            )
+            { fetched ? <ItemList productos={productos} onAdd={onAdd}/>
+            :
+            (<>
+                <Spinner animation="border" />
+                <br/>
+                <h2>Cargando...</h2>
+            </>)
             }
-            <br/>
         </>
     );
 }

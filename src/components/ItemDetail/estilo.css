@@ -13,9 +13,14 @@
     flex-flow: row wrap;
 }
 
-.detalle h2, .detalle h3{
+.detalle h2, .detalle h3 {
     display: inline;
     margin: auto;
+}
+
+span {
+    display: inline-block;
+    color: red;
 }
 
 .detalle img {

@@ -7,6 +7,7 @@ const ItemDetail = ( {producto, onAdd} ) => (
             <h2>{producto.description}</h2>
             <h3>Precio: ${producto.price}</h3>
             <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} />
+            {!producto.stock ? <span>Sin stock</span> : <></>}
         </div>
 );
 
