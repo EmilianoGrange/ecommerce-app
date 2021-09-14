@@ -97,7 +97,7 @@ const ItemListContainer = ({greeting}) => {
             { fetched ? <ItemList productos={productos} onAdd={onAdd}/>
             :
             (<>
-                <Spinner animation="border" />
+                <Spinner animation='border' />
                 <br/>
                 <h2>Cargando...</h2>
             </>)

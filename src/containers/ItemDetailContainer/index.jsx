@@ -15,19 +15,15 @@ const ItemDetailContainer = () => {
         .then(data => setItem(data.find(el => el.id === parseInt(id))))
     },[id]);
 
-    const onAdd = (cantidad) => {
-        console.log(`Se agregaron ${cantidad} items al carrito`);
-    }
-
     return (
         <>
             { item !== null ?
-                <ItemDetail producto={item} onAdd={onAdd}/>
+                <ItemDetail producto={item} />
             :
             (
                 <>
                     <br/>
-                    <Spinner animation="border" />
+                    <Spinner animation='border' />
                     <br/>
                     <h2>Cargando...</h2>
                 </>
