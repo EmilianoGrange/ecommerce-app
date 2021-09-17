@@ -1,4 +1,5 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {CustomProvider} from './context/CartContext';
 import NavBar from './components/NavBar';
 import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
@@ -11,18 +12,20 @@ function App () {
   return (
     <div className='App'>
       <BrowserRouter>
-        <NavBar />
-        <Switch>
-          <Route exact path='/'>
-            <ItemListContainer greeting='Bienvenidos a la pañalera' />
-          </Route>
-          <Route path='/category/:id'>
-            <ItemListContainer greeting='Bienvenidos a la pañalera' />
-          </Route>
-          <Route path='/item/:id' component={ItemDetailContainer}/>
-          <Route path='/cart' component={Cart}/>
-          <Route path='*' component={Mi404} />
-        </Switch>
+        <CustomProvider>
+          <NavBar />
+          <Switch>
+            <Route exact path='/'>
+              <ItemListContainer greeting='Bienvenidos a la pañalera' />
+            </Route>
+            <Route path='/category/:id'>
+              <ItemListContainer greeting='Bienvenidos a la pañalera' />
+            </Route>
+            <Route path='/item/:id' component={ItemDetailContainer}/>
+            <Route path='/cart' component={Cart}/>
+            <Route path='*' component={Mi404} />
+          </Switch>
+        </CustomProvider>
       </BrowserRouter>
     </div>
   );

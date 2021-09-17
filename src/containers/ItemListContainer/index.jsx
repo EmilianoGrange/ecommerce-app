@@ -86,15 +86,11 @@ const ItemListContainer = ({greeting}) => {
         return(setFetched(false));
     }, [id]);
 
-    const onAdd = (cantidad) => {
-        console.log(`Se agregaron ${cantidad} items al carrito`);
-    }
-
     return (
         <>
             <h1>{greeting}</h1>
             <br/>
-            { fetched ? <ItemList productos={productos} onAdd={onAdd}/>
+            { fetched ? <ItemList productos={productos} />
             :
             (<>
                 <Spinner animation='border' />
