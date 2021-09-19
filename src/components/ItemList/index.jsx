@@ -13,7 +13,7 @@ const ItemList = ({productos}) => (
                 ))}
             </Row>)
             :
-            <h2>No hay productos de esa categoria</h2>
+            <h2>No hay productos de esa categoría</h2>
         }
     </>
 );
