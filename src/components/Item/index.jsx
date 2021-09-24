@@ -8,6 +8,8 @@ import './estilo.css';
 
 const Item = ({producto}) => {
     const {addItem} = useContext(contexto);
+    /* console.log(producto);
+    console.log(producto.id); */
 
     const onAdd = (cantidad) => {
         addItem(producto, cantidad);

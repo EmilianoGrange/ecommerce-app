@@ -2,17 +2,20 @@ import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 import ItemDetail from '../../components/ItemDetail';
-
-const URL = 'https://mocki.io/v1/a20df978-de80-4465-aaf8-096b42601b5a';
+import {firestore} from '../../firebase';
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState(null);
     const {id} = useParams();
 
-    useEffect ( () => {
-        fetch(URL)
-        .then(response => response.json())
-        .then(data => setItem(data.find(el => el.id === parseInt(id))))
+    useEffect(() => {
+        const collection = firestore.collection('productos');
+        const producto = collection.doc(id);
+        producto.get().then(doc => {
+            setItem(doc.data());
+        }).catch(error => {
+            console.log('error', error);
+        })
     },[id]);
 
     return (

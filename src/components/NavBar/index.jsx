@@ -17,10 +17,10 @@ const NavBar = () => {
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='me-auto'>
             <NavLink className='nav-link' to='/'>Home</NavLink>
-            <NavLink className='nav-link' to='/category/1'>Pampers</NavLink>
-            <NavLink className='nav-link' to='/category/2'>Babysec</NavLink>
-            <NavLink className='nav-link' to='/category/3'>Huggies</NavLink>
-            <NavLink className='nav-link' to='/category/4'>Estrella</NavLink>
+            <NavLink className='nav-link' to='/category/Pampers'>Pampers</NavLink>
+            <NavLink className='nav-link' to='/category/Babysec'>Babysec</NavLink>
+            <NavLink className='nav-link' to='/category/Huggies'>Huggies</NavLink>
+            <NavLink className='nav-link' to='/category/Estrella'>Estrella</NavLink>
           </Nav>
         </Navbar.Collapse>
         { cart.length ?
