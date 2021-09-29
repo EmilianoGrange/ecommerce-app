@@ -10,7 +10,7 @@ export const CustomProvider = ({children}) => {
 
     const addItem = (item, quantity) => {
         if(isInCart(item.id)) {
-            let aux = cart.map((producto)  => {
+            let aux = cart.map((producto) => {
                 if(producto.item.id === item.id){
                     producto.quantity = producto.quantity + quantity;
                 }

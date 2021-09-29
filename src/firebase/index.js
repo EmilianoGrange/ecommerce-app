@@ -15,3 +15,14 @@ export function getFirebase () {
 }
 
 export const firestore = firebase.firestore(app);
+
+export const generarOrden = (buyer, items, total) => {
+    const collection = firestore.collection('ordenes');
+    const orden = {
+        buyer,
+        items,
+        date: firebase.firestore.Timestamp.fromDate(new Date()),
+        total
+    };
+    return collection.add(orden);
+}

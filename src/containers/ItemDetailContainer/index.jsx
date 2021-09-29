@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
         const collection = firestore.collection('productos');
         const producto = collection.doc(id);
         producto.get().then(doc => {
-            setItem(doc.data());
+            setItem({...doc.data(), id: doc.id});
         }).catch(error => {
             console.log('error', error);
         })
