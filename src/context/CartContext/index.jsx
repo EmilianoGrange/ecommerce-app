@@ -1,8 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react';
 
 export const contexto = createContext();
-
-//const {Provider} = contexto; == contexto.Provider
 
 export const CustomProvider = ({children}) => {
     const [cart, setCart] = useState([]);
@@ -23,8 +21,6 @@ export const CustomProvider = ({children}) => {
                 item,
                 quantity
             }
-
-            //o const prod = {...item, quantity} !!
     
             setCart([...cart, prod]);
         }
@@ -45,7 +41,7 @@ export const CustomProvider = ({children}) => {
         setCart([...aux]);
     }
 
-    const cartIndicator = cart.reduce((acum, e ) => acum += e.quantity, 0);
+    const cartIndicator = cart.reduce((acum, e) => acum += e.quantity, 0);
 
     const cartTotal = () => setTotal(cart.reduce((acum, e)=> acum += e.item.price * e.quantity , 0));
 
@@ -54,10 +50,6 @@ export const CustomProvider = ({children}) => {
     }
 
     const isInCart = (id) => cart.some(el => el.item.id === id);
-
-    //const isInCart2 =(id) => cart.find(producto => producto.item.id === id);
-
-    //const hayStock = () => la cantidad en el carrito es menor que el stock
 
     return (
         <contexto.Provider value={{cart, cartTotal, total, addItem, removeItem, removeOne, cartIndicator, clear}}>

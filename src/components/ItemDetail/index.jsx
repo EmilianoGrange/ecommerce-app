@@ -11,7 +11,6 @@ const ItemDetail = ( {producto} ) => {
 
     const onAdd = (cantidad) => {
         addItem(producto, cantidad);
-        console.log(`Agregaste ${cantidad} items al carrito`);
         setCompra(true);
     };
 

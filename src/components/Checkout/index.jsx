@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { contexto } from '../../context/CartContext';
 import { generarOrden } from '../../firebase';
+import './estilo.css';
 
 const Checkout = () => {
     const [name, setName] = useState('');
@@ -49,23 +50,25 @@ const Checkout = () => {
             {pedido ? <h2>Gracias por tu compra! Te enviaremos un mail con los detalles</h2>
             :
             <>
-                <Form className="formulario">
-                    <Form.Group className="mb-3 w-50" controlId="formBasicName">
+                <h2>{cart.length} productos</h2>
+                <h2>${total}</h2>
+                <Form className='formulario'>
+                    <Form.Group className='mb-3 w-50' controlId='formBasicName'>
                         <Form.Label>Nombre y Apellido:</Form.Label>
-                        <Form.Control type="name" placeholder="Juan Perez" onChange={saveName} />
+                        <Form.Control type='name' placeholder='Juan Perez' onChange={saveName}/>
                     </Form.Group>
 
-                    <Form.Group className="mb-3 w-50" controlId="formBasicPhone">
+                    <Form.Group className='mb-3 w-50' controlId='formBasicPhone'>
                         <Form.Label>Telefono:</Form.Label>
-                        <Form.Control type="phone" placeholder="(000) 111-2222" onChange={savePhone} />
+                        <Form.Control type='phone' placeholder='000 111-2222' onChange={savePhone}/>
                     </Form.Group>
 
-                    <Form.Group className="mb-3 w-50" controlId="formBasicEmail">
+                    <Form.Group className='mb-3 w-50' controlId='formBasicEmail'>
                         <Form.Label>E-mail:</Form.Label>
-                        <Form.Control type="email" placeholder="xxxx@yyy.com" onChange={saveMail} />
+                        <Form.Control type='email' placeholder='xxxx@yyy.com' onChange={saveMail}/>
                     </Form.Group>
                 </Form>
-                <Button variant="primary" onClick={guardarOrden}>Realizar Pedido</Button>
+                <Button variant='primary' onClick={guardarOrden}>Realizar Pedido</Button>
             </>
             }
         </>

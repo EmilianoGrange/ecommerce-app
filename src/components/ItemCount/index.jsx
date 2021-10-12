@@ -23,6 +23,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
             <Button disabled={!stock} variant='dark' onClick={() => onAdd(count)}>Agregar al carrito</Button>
         </div>
     )
-}
+};
 
 export default ItemCount;

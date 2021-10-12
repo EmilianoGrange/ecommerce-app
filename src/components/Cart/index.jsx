@@ -25,7 +25,7 @@ const Cart = () => {
             )
             :
             <>
-                <h2>Un carrito vacio</h2>
+                <h2>No hay productos en el carrito</h2>
                 <Link to='/' className='enlace'><h3>Volver a la tienda</h3></Link>
             </>
             }

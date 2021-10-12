@@ -1,3 +1,22 @@
-.nav-bar {
+#nav-bar {
     width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    height: 10vh;
+}
+
+#logo {
+    font-size: 120%;
+    margin-left: 2rem;
+}
+
+.nav-link {
+    margin-right: 2rem;
+    font-size: 120%;
+}
+
+#container {
+    max-width: 1400px;
 }
