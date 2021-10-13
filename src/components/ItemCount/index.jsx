@@ -6,7 +6,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     const [count, setCount] = useState(initial);
 
     const sumar = () => {
-        count<stock ? setCount(count + 1) : console.log('No hay mas articulos disponibles');
+        count<stock ? setCount(count + 1) : console.log('No hay stock suficiente');
     }
 
     const restar = () => {

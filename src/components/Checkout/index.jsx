@@ -13,12 +13,6 @@ const Checkout = () => {
 
     const {cart, total, clear} = useContext(contexto);
 
-    /*
-    TODO mapear el carrito antes de guardarlo en la orden
-    TODO estilar
-    TODO validar los formularios
-    */
-
     function guardarOrden (event) {
         event.preventDefault();
 

@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import ItemCount from '../ItemCount';
@@ -7,12 +7,16 @@ import './estilo.css';
 
 const ItemDetail = ( {producto} ) => {
     const [compra, setCompra] = useState(false);
-    const {addItem} = useContext(contexto);
+    const {addItem, actualizarLocal} = useContext(contexto);
 
     const onAdd = (cantidad) => {
         addItem(producto, cantidad);
         setCompra(true);
     };
+
+    useEffect(() => {
+        actualizarLocal();
+    }, [actualizarLocal]);
 
     return (
         <div className='detalle'>

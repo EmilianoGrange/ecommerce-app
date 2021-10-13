@@ -6,11 +6,12 @@ import CartItem from '../CartItem';
 import './estilo.css';
 
 const Cart = () => {
-    const {cart, addItem, cartTotal, total, removeItem, removeOne, clear} = useContext(contexto);
+    const {cart, actualizarLocal, addItem, cartTotal, total, removeItem, removeOne, clear} = useContext(contexto);
 
     useEffect(() => {
-        cartTotal()
-    }, [cart, cartTotal]);
+        cartTotal();
+        actualizarLocal();
+    }, [cart, cartTotal, actualizarLocal]);
 
     return (
         <>

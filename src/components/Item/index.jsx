@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -7,11 +7,15 @@ import { contexto } from '../../context/CartContext';
 import './estilo.css';
 
 const Item = ({producto}) => {
-    const {addItem} = useContext(contexto);
-
+    const {addItem, actualizarLocal} = useContext(contexto);
+    
     const onAdd = (cantidad) => {
         addItem(producto, cantidad);
     };
+
+    useEffect(() => {
+        actualizarLocal();
+    }, [actualizarLocal]);
 
     return (
         <Card className='text-center item'>

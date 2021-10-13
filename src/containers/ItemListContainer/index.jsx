@@ -22,6 +22,7 @@ const ItemListContainer = ({greeting}) => {
         }).finally(() => {
             setFetched(true);
         })
+
     }, [id]);
 
     return (

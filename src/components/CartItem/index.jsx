@@ -6,14 +6,20 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import './estilo.css';
 
-const CartItem = ({objeto, agregar, remover, menosUno}) => (
+const CartItem = ({objeto, agregar, remover, menosUno}) => {
+
+    const onAdd = () => {
+        agregar(objeto.item, 1);
+    };
+
+return(
     <Container fluid>
         <Row>
             <Col><img src={objeto.item.pictureUrl} alt={`${objeto.item.description}`} /></Col>
             <Col><p className='celda'>{objeto.item.title}</p></Col>
             <Col><p className='celda'>${objeto.item.price}</p></Col>
             <Col>
-                <Button id='boton-1' onClick={() => agregar(objeto.item, 1)} variant='outline-primary'>+</Button>
+                <Button id='boton-1' onClick={onAdd} variant='outline-primary'>+</Button>
                 <p>{objeto.quantity}</p>
                 <Button onClick={() => menosUno(objeto.item.id)} variant='outline-primary'>-</Button>
             </Col>
@@ -21,5 +27,6 @@ const CartItem = ({objeto, agregar, remover, menosUno}) => (
         </Row>
     </Container>
 );
+}
 
 export default CartItem;

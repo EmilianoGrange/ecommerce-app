@@ -3,14 +3,20 @@ import { createContext, useState } from 'react';
 export const contexto = createContext();
 
 export const CustomProvider = ({children}) => {
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState(localStorage.getItem('carrito') ? (JSON.parse(localStorage.getItem('carrito'))) : []);
     const [total, setTotal] = useState(0);
+
+    const actualizarLocal = () => {
+        localStorage.setItem('carrito', JSON.stringify(cart));
+    }
 
     const addItem = (item, quantity) => {
         if(isInCart(item.id)) {
             let aux = cart.map((producto) => {
                 if(producto.item.id === item.id){
-                    producto.quantity = producto.quantity + quantity;
+                    if(producto.quantity + quantity <= producto.item.stock) {
+                        producto.quantity = producto.quantity + quantity;
+                    }
                 }
                 return producto;
             });
@@ -21,7 +27,6 @@ export const CustomProvider = ({children}) => {
                 item,
                 quantity
             }
-    
             setCart([...cart, prod]);
         }
     }
@@ -52,7 +57,7 @@ export const CustomProvider = ({children}) => {
     const isInCart = (id) => cart.some(el => el.item.id === id);
 
     return (
-        <contexto.Provider value={{cart, cartTotal, total, addItem, removeItem, removeOne, cartIndicator, clear}}>
+        <contexto.Provider value={{cart, actualizarLocal, cartTotal, total, addItem, removeItem, removeOne, cartIndicator, clear}}>
             {children}
         </contexto.Provider>
     )
