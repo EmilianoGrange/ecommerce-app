@@ -16,7 +16,6 @@ Proyecto final para el curso de Reactjs en [CoderHouse](https://www.coderhouse.c
 ## Flujo de Compra
 
 Es posible agregar productos al carrito desde el home (lista con todos los productos), desde una categoria especifica, o desde el detalle de cada producto. Pueden incorporarse uno o múltiples items. Tambien es posible agregar mas items del mismo producto en el propio carrito. En caso de no haber stock se indica en el detalle, y esta deshabilitado el boton de Agregar al carrito. En el checkout, el usuario completa sus datos y recibe confirmacion de su orden, proporcionandose un id de compra.
-En un futuro podria incorporarse una API de pago, por ejemplo mercado pago.
 
 ## Componentes mas relevantes
 
